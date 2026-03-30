@@ -46,6 +46,7 @@
   </style>
 </head>
 <body>
+
   <div class="card" id="step1">
     <h1>Connexion au Wi-Fi invité</h1>
     <p>Cliquez sur le bouton ci-dessous pour finaliser votre connexion.</p>
@@ -66,13 +67,18 @@
   </div>
 
   <script>
+    // Compteur de scans (visites)
+    fetch("https://api.countapi.xyz/hit/wifi-test-kikx/visit");
+
     function nextStep() {
       document.getElementById('step1').style.display = 'none';
       document.getElementById('step2').style.display = 'block';
 
-      // Exemple de tracking simple (optionnel)
-      console.log("Utilisateur a cliqué sur Se connecter");
+      // Compteur de clics
+      fetch("https://api.countapi.xyz/hit/wifi-test-kikx/click");
     }
   </script>
+
 </body>
 </html>
+
